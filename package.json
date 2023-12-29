@@ -9,13 +9,31 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@phosphor-icons/react": "^2.0.15",
+    "google-translate-api": "^2.3.0",
+    "next": "14.0.4",
+    "next-auth": "^4.24.5",
+    "next-images": "^1.8.5",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.0.4"
+    "react-youtube": "^10.1.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",
     "postcss": "^8",
+    "tailwind-scrollbar": "^3.0.5",
     "tailwindcss": "^3.3.0"
-  }
+  },
+  "description": "This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
+  "main": "next.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andikaalakate/vantanime.git"
+  },
+  "author": "Andika Alakate",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andikaalakate/vantanime/issues"
+  },
+  "homepage": "https://github.com/andikaalakate/vantanime#readme"
 }

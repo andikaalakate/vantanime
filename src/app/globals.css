@@ -2,26 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+*,
+*::before,
+*::after {
+  @apply p-0 m-0 box-border;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+img {
+  @apply transition-all ease-in-out;
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.img-card {
+  @apply w-full mini:max-h-[20rem] minni:max-h-[24rem] hmin:max-h-[16rem] hp:max-h-[22rem] sm:max-h-[16rem] md:max-h-[15rem] lg:max-h-[16rem] tablet-l:max-h-[18rem] xl:max-h-[20rem] 2xl:max-h-[15rem] max-h-[48rem] object-cover;
+}
+
+.loading {
+  width: 100px;
+  height: 100px;
+  display: grid;
+}
+.loading::before,
+.loading::after {
+  content: "";
+  grid-area: 1/1;
+  --c: radial-gradient(farthest-side, #0059ff 92%, #0000);
+  background: var(--c) 50% 0, var(--c) 50% 100%, var(--c) 100% 50%,
+    var(--c) 0 50%;
+  background-size: 24px 24px;
+  background-repeat: no-repeat;
+  animation: s2 0.5s infinite;
+}
+.loading::before {
+  margin: 8px;
+  filter: hue-rotate(45deg);
+  background-size: 16px 16px;
+  animation-timing-function: linear;
+}
+
+@keyframes s2 {
+  100% {
+    transform: rotate(0.5turn);
+  }
 }
