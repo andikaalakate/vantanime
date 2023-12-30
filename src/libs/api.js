@@ -14,12 +14,12 @@ export const getMangaResponse = async(resource, query) => {
 
 export const getNestedAnimeResponse = async(resource, objectProperty) => {
     const response = await getAnimeResponse(resource)
-    return response.data.flatMap(item => item[objectProperty])
+    return response.data.flatMap((item) => item[objectProperty] || []);
 }
 
 export const getNestedMangaResponse = async(resource, objectProperty) => {
     const response = await getMangaResponse(resource)
-    return response.data.flatMap(item => item[objectProperty])
+    return response.data.flatMap((item) => item[objectProperty] || []);
 }
 
 export const reproduce = (data, gap) => {

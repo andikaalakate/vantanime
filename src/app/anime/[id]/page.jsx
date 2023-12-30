@@ -1,17 +1,51 @@
 import { getAnimeResponse } from "@/libs/api";
 import VideoPlayer from "@/components/Utilities/VideoPlayer";
 import Image from "next/image";
+import CollectionButton from "@/components/AnimeList/CollectionButton";
+import { authUserSession } from "@/libs/auth";
+import prisma from "@/libs/prisma";
+import ButtonBack from "@/components/AnimeList/ButtonBack";
+import CommentInput from "@/components/AnimeList/CommentInput";
+import CommentBox from "@/components/AnimeList/CommentBox";
 
 const Page = async ({ params: { id } }) => {
   const anime = await getAnimeResponse(`anime/${id}`);
+  const user = await authUserSession();
+  const collection = await prisma.collection.findFirst({
+    where: { user_email: user?.email, anime_id: id },
+  });
+  const comments = await prisma.comment.findFirst({
+    where: { user_email: user?.email, anime_id: id },
+  });
   //   console.log(anime)
   return (
     <>
-      <div className="pt-4 px-4">
+      <div className="pt-4 px-4 flex justify-between items-center gap-4">
         <h3 className="text-color-whity text-xl">
           {anime.data?.title} - {anime.data?.year}
         </h3>
+        <ButtonBack />
       </div>
+      {!collection && user ? (
+        <CollectionButton
+          anime_id={id}
+          user_email={user?.email}
+          anime_img={anime.data?.images.webp.image_url}
+          anime_title={anime.data?.title}
+          label_button="Tambah ke Koleksi"
+          disbtn={false}
+        />
+      ) : user ? (
+        <CollectionButton
+          anime_id={id}
+          user_email={user?.email}
+          anime_img={anime.data?.images.webp.image_url}
+          anime_title={anime.data?.title}
+          label_button="Sudah ditambahkan ke koleksi."
+          disbtn={true}
+        />
+      ) : null}
+
       <div className="pt-4 px-4 flex gap-2 text-color-whity overflow-x-auto">
         <div className="w-36 flex flex-col justify-center items-center rounded-lg border border-color-whity p-2">
           <h3>Peringkat</h3>
@@ -49,7 +83,7 @@ const Page = async ({ params: { id } }) => {
             <p>Tidak ada studio yang tersedia</p>
           )}
         </div>
-        <div className="w-36 flex flex-col justify-center items-center rounded-lg border border-color-whity p-2">
+        {/* <div className="w-36 flex flex-col justify-center items-center rounded-lg border border-color-whity p-2">
           <h3>Genre</h3>
           {anime.data?.genres.length > 0 ? (
             <ul>
@@ -60,7 +94,7 @@ const Page = async ({ params: { id } }) => {
           ) : (
             <p>Tidak ada genre yang tersedia</p>
           )}
-        </div>
+        </div> */}
       </div>
       <div className="pt-4 px-4 flex md:flex-nowrap flex-wrap gap-2 text-color-whity">
         <Image
@@ -79,6 +113,21 @@ const Page = async ({ params: { id } }) => {
             ))}
         </div>
       </div>
+      <div>
+        {comments && (
+          <h3 className="text-color-whity text-2xl font-bold ml-4">Komentar</h3>
+        )}
+        <CommentBox anime_id={id} />
+        {user && (
+          <CommentInput
+            anime_id={id}
+            user_email={user?.email}
+            username={user?.name}
+            anime_title={anime.data?.title}
+          />
+        )}
+      </div>
+
       <div>
         <VideoPlayer youtubeId={anime.data?.trailer.youtube_id} />
       </div>

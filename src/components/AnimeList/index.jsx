@@ -12,7 +12,7 @@ const AnimeList = ({ api, hrefLink }) => {
           >
             <Link
               href={`${hrefLink}/${anime.mal_id}`}
-              className="cursor-pointer" target="_blank"
+              className="cursor-pointer"
             >
               <Image
                 src={anime.images?.webp.image_url}

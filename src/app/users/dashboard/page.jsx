@@ -8,7 +8,7 @@ const Page = async () => {
   return (
     <>
       <div className="text-color-whity flex flex-col my-8 justify-center items-center">
-        <h5 className="text-2xl font-bold py-4">Welcome To {user?.name}</h5>
+        <h5 className="text-2xl font-bold py-4">Welcome, {user?.name}</h5>
         <Image src={user?.image} alt="..." width={250} height={250} />
         <div className="py-8 flex gap-4">
           <Link

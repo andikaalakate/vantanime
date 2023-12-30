@@ -12,11 +12,11 @@ const Page = async ({ params }) => {
     <>
       <section>
         <Header title={`Pencarian Anime untuk ${decodeKeyword} :`} />
-        <AnimeList api={searchAnime} />
+        <AnimeList api={searchAnime} hrefLink={"/anime"} />
       </section>
       <section>
         <Header title={`Pencarian Manga untuk ${decodeKeyword} :`} />
-        <AnimeList api={searchManga} />
+        <AnimeList api={searchManga} hrefLink={"/manga"} />
       </section>
     </>
   );
