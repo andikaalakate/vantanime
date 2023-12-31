@@ -1,14 +1,20 @@
-import AnimeList from "@/components/AnimeList";
-import Header from "@/components/AnimeList/Header";
-import { getAnimeResponse, getMangaResponse, getNestedAnimeResponse, getNestedMangaResponse, reproduce } from "@/libs/api";
+import AnimeList from "@/components/AniMangaList";
+import Header from "@/components/AniMangaList/Header";
+import {
+  getAnimeResponse,
+  getMangaResponse,
+  getNestedAnimeResponse,
+  getNestedMangaResponse,
+  reproduce,
+} from "@/libs/api";
 
 const Page = async () => {
   const topAnime = await getAnimeResponse("top/anime", "limit=8");
   const topManga = await getMangaResponse("top/manga", "limit=8");
   let recAnime = await getNestedAnimeResponse("recommendations/anime", "entry");
   let recManga = await getNestedMangaResponse("recommendations/manga", "entry");
-  recAnime = reproduce(recAnime, 8)
-  recManga = reproduce(recManga, 8)
+  recAnime = reproduce(recAnime, 8);
+  recManga = reproduce(recManga, 8);
 
   return (
     <>
@@ -21,9 +27,7 @@ const Page = async () => {
         <AnimeList api={topAnime} hrefLink={"/anime"} />
       </section>
       <section>
-        <Header
-          title="Rekomendasi Anime"
-        />
+        <Header title="Rekomendasi Anime" />
         <AnimeList api={recAnime} hrefLink={"/anime"} />
       </section>
       <section>
@@ -35,9 +39,7 @@ const Page = async () => {
         <AnimeList api={topManga} hrefLink={"/manga"} />
       </section>
       <section>
-        <Header
-          title="Rekomendasi Manga"
-        />
+        <Header title="Rekomendasi Manga" />
         <AnimeList api={recManga} hrefLink={"/manga"} />
       </section>
     </>

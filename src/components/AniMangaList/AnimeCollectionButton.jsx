@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
-const CollectionButton = ({ disbtn, label_button, anime_id, user_email, anime_img, anime_title }) => {
+const AnimeCollectionButton = ({ disbtn, label_button, anime_id, user_email, anime_img, anime_title }) => {
   const [isCreated, setIsCreated] = useState(false);
 
   const router = useRouter();
@@ -13,7 +13,7 @@ const CollectionButton = ({ disbtn, label_button, anime_id, user_email, anime_im
 
     const data = { anime_id, user_email, anime_img, anime_title };
 
-    const response = await fetch("/api/v1/collection", {
+    const response = await fetch("/api/v1/anime/collection", {
       method: "POST",
       body: JSON.stringify(data),
     });
@@ -42,4 +42,4 @@ const CollectionButton = ({ disbtn, label_button, anime_id, user_email, anime_im
   );
 };
 
-export default CollectionButton;
+export default AnimeCollectionButton;

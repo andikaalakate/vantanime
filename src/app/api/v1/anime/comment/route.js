@@ -4,7 +4,7 @@ export async function POST(request) {
   const { anime_id, user_email, comment, username, anime_title } = await request.json();
   const data = { anime_id, user_email, comment, username, anime_title };
 
-  const createComment = await prisma.comment.create({ data });
+  const createComment = await prisma.AnimeComment.create({ data });
 
   if (!createComment)
     return Response.json({ status: 500, isCreated: false });

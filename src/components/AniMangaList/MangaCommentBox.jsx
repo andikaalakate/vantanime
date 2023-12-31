@@ -1,7 +1,7 @@
 import prisma from "@/libs/prisma";
 
-const CommentBox = async ({anime_id}) => {
-  const comments = await prisma.comment.findMany({ where: { anime_id } });
+const MangaCommentBox = async ({manga_id}) => {
+  const comments = await prisma.MangaComment.findMany({ where: { manga_id } });
   return (
     <div className="grid mini:grid-cols-1 mini:overflow-y-auto md:grid-cols-4 gap-4 m-4 overflow-x-auto">
       {comments.map((comment) => {
@@ -19,4 +19,4 @@ const CommentBox = async ({anime_id}) => {
   );
 };
 
-export default CommentBox;
+export default MangaCommentBox;
