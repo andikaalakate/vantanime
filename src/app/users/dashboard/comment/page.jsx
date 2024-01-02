@@ -15,10 +15,12 @@ const Page = async () => {
     <section className="mt-4 mb-2">
       <Header title="My Comment" />
       <section>
-        <h3 className="text-2xl text-color-whity text-center font-bold p-4">
-          AnimeList Comment
-        </h3>
-        <div className="grid mini:grid-cols-1 md:grid-cols-2 gap-4 m-4">
+        <div className="animate__animated animate__fadeIn animate__slower bg-color-primary mx-4 rounded-lg shadow-lg">
+          <h3 className="text-2xl text-color-whity text-center font-bold p-4">
+            AnimeList Comment
+          </h3>
+        </div>
+        <div className="grid mini:grid-cols-1 md:grid-cols-2 gap-4 m-4 animate__animated animate__fadeInUp animate__slow">
           {animeComments.map((comment) => {
             return (
               <Link
@@ -36,10 +38,12 @@ const Page = async () => {
         </div>
       </section>
       <section>
-        <h3 className="text-2xl text-color-whity text-center font-bold p-4">
-          MangaList Comment
-        </h3>
-        <div className="grid mini:grid-cols-1 md:grid-cols-2 gap-4 m-4">
+        <div className="animate__animated animate__fadeIn animate__slower bg-color-primary mx-4 rounded-lg shadow-lg">
+          <h3 className="text-2xl text-color-whity text-center font-bold p-4">
+            MangaList Comment
+          </h3>
+        </div>
+        <div className="grid mini:grid-cols-1 md:grid-cols-2 gap-4 m-4 animate__animated animate__fadeInUp animate__slow">
           {mangaComments.map((comment) => {
             return (
               <Link

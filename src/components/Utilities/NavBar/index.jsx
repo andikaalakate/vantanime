@@ -4,8 +4,8 @@ import UserAction from "./UserAction";
 
 const NavBar = () => {
   return (
-    <header className="bg-color-primary mb-6">
-      <div className="flex md:flex-row flex-col gap-2 items-center justify-between p-4">
+    <header className="bg-color-primary tablet-l:sticky tablet-l:bg-opacity-75 tablet-l:shadow-lg top-0 z-50">
+      <div className="flex md:flex-row flex-col gap-2 items-center md:justify-between p-4">
         <Link href="/" className="font-bold text-white text-2xl">
           VantaNime.
         </Link>

@@ -4,7 +4,8 @@ import '@/app/globals.css'
 import { Poppins } from 'next/font/google'
 import Favicon from '@/components/Utilities/Head/Favicon'
 import Footer from '@/components/Utilities/Footer'
-
+import 'animate.css'
+import ScrollToTop from '@/components/Utilities/ScrollToTop'
 const poppins = Poppins({ subsets: ['latin'], weight:'500' })
 
 export const metadata = {
@@ -23,11 +24,12 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <Favicon />
       <body
-        className={`${poppins.className} scrollbar-thin scrollbar-thumb-color-whity scrollbar-track-gray-10 bg-color-secondary`}
+        className={`${poppins.className} scrollbar-thin scrollbar-thumb-color-whity scrollbar-track-color-primary bg-color-secondary animate__animated animate__fadeIn animate__slow`}
       >
         <NavBar />
         {children}
         {/* <Footer /> */}
+        <ScrollToTop />
       </body>
     </html>
   );

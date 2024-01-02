@@ -18,16 +18,18 @@ const Page = async () => {
       <section className="mt-4 px-4 w-full">
         <Header title="My Collection" />
         <section>
-          <h3 className="text-2xl text-color-whity text-center font-bold p-4">
-            AnimeList Collection
-          </h3>
-          <div className="grid mini:grid-cols-1 hmin:grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-5 2xl:grid-cols-8 sm:grid-cols-3 m-4">
+          <div className="animate__animated animate__fadeIn animate__slower bg-color-primary mx-4 rounded-lg shadow-lg">
+            <h3 className="text-2xl text-color-whity text-center font-bold p-4">
+              AnimeList Collection
+            </h3>
+          </div>
+          <div className="grid mini:grid-cols-1 hmin:grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-5 2xl:grid-cols-8 sm:grid-cols-3 m-4 animate__animated animate__fadeInUp animate__slow">
             {animeCollection.map((collect, index) => {
               return (
                 <Link
                   key={index}
                   href={`/anime/${collect.anime_id}`}
-                  className="shadow-xl hover:scale-105 transition-all duration-500 shadow-color-dark bg-color-whity rounded-lg border-2 border-color-whity"
+                  className="shadow-xl hover:scale-105 transition-all duration-500 shadow-color-dark bg-color-whity rounded-lg border-2 border-color-whity hover:bg-color-primary hover:border-color-primary group"
                 >
                   <Image
                     src={collect.anime_img}
@@ -36,7 +38,7 @@ const Page = async () => {
                     height={350}
                     className="img-card rounded-t-lg"
                   />
-                  <h5 className="font-bold text-md md:text-xl p-4 hover:text-color-primary transition-all duration-500">
+                  <h5 className="font-bold text-md md:text-xl p-4 group-hover:text-color-whity transition-all duration-500">
                     {collect.anime_title}
                   </h5>
                 </Link>
@@ -45,16 +47,18 @@ const Page = async () => {
           </div>
         </section>
         <section>
-          <h3 className="text-2xl text-color-whity text-center font-bold p-4">
-            MangaList Collection
-          </h3>
-          <div className="grid mini:grid-cols-1 hmin:grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-5 2xl:grid-cols-8 sm:grid-cols-3 m-4">
+          <div className="animate__animated animate__fadeIn animate__slower bg-color-primary mx-4 rounded-lg shadow-lg">
+            <h3 className="text-2xl text-color-whity text-center font-bold p-4">
+              MangaList Collection
+            </h3>
+          </div>
+          <div className="grid mini:grid-cols-1 hmin:grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-5 2xl:grid-cols-8 sm:grid-cols-3 m-4 animate__animated animate__fadeInUp animate__slow">
             {mangaCollection.map((collect, index) => {
               return (
                 <Link
                   key={index}
                   href={`/manga/${collect.manga_id}`}
-                  className="shadow-xl hover:scale-105 transition-all duration-500 shadow-color-dark bg-color-whity rounded-lg border-2 border-color-whity"
+                  className="shadow-xl hover:scale-105 transition-all duration-500 shadow-color-dark bg-color-whity rounded-lg border-2 border-color-whity hover:bg-color-primary hover:border-color-primary group"
                 >
                   <Image
                     src={collect.manga_img}
@@ -63,7 +67,7 @@ const Page = async () => {
                     height={350}
                     className="img-card rounded-t-lg"
                   />
-                  <h5 className="font-bold text-md md:text-xl p-4 hover:text-color-primary transition-all duration-500">
+                  <h5 className="font-bold text-md md:text-xl p-4 group-hover:text-color-whity transition-all duration-500">
                     {collect.manga_title}
                   </h5>
                 </Link>

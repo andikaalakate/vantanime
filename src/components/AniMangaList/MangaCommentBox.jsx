@@ -8,7 +8,7 @@ const MangaCommentBox = async ({manga_id}) => {
         return (
           <div
             key={comment.id}
-            className="text-color-whity bg-color-dark p-4 rounded-lg shadow-lg"
+            className="text-color-whity bg-color-secondary border border-slate-500 p-4 rounded-lg shadow-lg"
           >
             <p className="font-bold text-lg mb-1">{comment.username}</p>
             <p className="font-light">{comment.comment}</p>
