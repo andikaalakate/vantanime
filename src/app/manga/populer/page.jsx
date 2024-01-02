@@ -1,7 +1,7 @@
 "use client";
 
 import { getMangaResponse } from "@/libs/api";
-import AnimeList from "@/components/AniMangaList";
+import MangaList from "@/components/AniMangaList";
 import { Pagination } from "@/components/Utilities/Pagination";
 import { HeaderMenu } from "@/components/Utilities/Pagination/HeaderMenu";
 import { useEffect, useState } from "react";
@@ -22,7 +22,7 @@ const Page = () => {
   return (
     <>
       <HeaderMenu title={`Manga Terpopuler #${page}`} />
-      <AnimeList api={topAnime} hrefLink={"/manga"} />
+      <MangaList api={topAnime} hrefLink={"/manga"} />
       <Pagination
         page={page}
         lastPage={topAnime.pagination?.last_visible_page}

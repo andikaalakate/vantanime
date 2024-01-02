@@ -15,16 +15,11 @@ const Page = async ({ params: { id } }) => {
   const collection = await prisma.AnimeCollection.findFirst({
     where: { user_email: user?.email, anime_id: id },
   });
-  // console.log(collection)
-  const comments = await prisma.AnimeComment.findFirst({
-    where: { user_email: user?.email, anime_id: id },
-  });
-  //   console.log(anime)
   return (
     <>
       <div className="pt-4 px-4 flex justify-between items-center gap-4">
         <h3 className="text-color-whity text-xl">
-          {anime.data?.title} - {anime.data?.year}
+          {anime.data?.title} - {anime.data?.status}
         </h3>
         <ButtonBack />
       </div>
@@ -48,13 +43,14 @@ const Page = async ({ params: { id } }) => {
         />
       ) : null}
 
-      <div className="px-4 flex md:flex-nowrap flex-wrap gap-4 text-color-whity">
+      <div className="px-4 flex lg:flex-nowrap flex-wrap gap-4 text-color-whity">
         <Image
           src={anime.data?.images.webp.image_url}
           alt={anime.data?.images.jpg.image_url}
           width={250}
           height={250}
-          className="img-card mini:max-h-[28rem] minni:max-h-[34rem] hmin:max-h-[38rem] hp:max-h-[40rem] sm:max-h-[50rem] rounded-lg my-5 shadow-xl border-2 border-color-dark md:hover:scale-95 duration-500 transition-all delay-200"
+          layout="fixed"
+          className="img-card mini:max-h-[28rem] minni:max-h-[34rem] hmin:max-h-[38rem] hp:max-h-[40rem] sm:max-h-[50rem] rounded-lg my-5 shadow-xl border-2 border-color-dark md:hover:scale-95 duration-500 transition-all delay-200 mx-auto"
         />
         <div className="text-justify text-xl my-4 bg-color-dark rounded-lg p-4">
           {anime.data?.synopsis &&

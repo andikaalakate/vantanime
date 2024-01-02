@@ -19,7 +19,7 @@ img {
 }
 
 .img-card {
-  @apply w-full mini:max-h-[20rem] minni:max-h-[24rem] hmin:max-h-[16rem] hp:max-h-[22rem] sm:max-h-[16rem] md:max-h-[15rem] lg:max-h-[16rem] tablet-l:max-h-[18rem] xl:max-h-[20rem] 2xl:max-h-[15rem] max-h-[48rem] object-cover;
+  @apply mini:max-h-[20rem] minni:max-h-[24rem] hmin:max-h-[16rem] hp:max-h-[22rem] sm:max-h-[16rem] md:max-h-[15rem] lg:max-h-[16rem] tablet-l:max-h-[18rem] xl:max-h-[20rem] 2xl:max-h-[15rem] max-h-[48rem] object-cover mini:w-full mini:h-auto lg:w-[30rem] lg:h-[42rem] items-center justify-center;
 }
 
 .loading {

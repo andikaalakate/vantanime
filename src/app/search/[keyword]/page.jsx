@@ -1,5 +1,5 @@
 import { getAnimeResponse, getMangaResponse } from "@/libs/api";
-import AnimeList from "@/components/AniMangaList";
+import AniMangaList from "@/components/AniMangaList";
 import Header from "@/components/AniMangaList/Header";
 
 const Page = async ({ params }) => {
@@ -12,11 +12,11 @@ const Page = async ({ params }) => {
     <>
       <section>
         <Header title={`Pencarian Anime untuk ${decodeKeyword} :`} />
-        <AnimeList api={searchAnime} hrefLink={"/anime"} />
+        <AniMangaList api={searchAnime} hrefLink={"/anime"} />
       </section>
       <section>
         <Header title={`Pencarian Manga untuk ${decodeKeyword} :`} />
-        <AnimeList api={searchManga} hrefLink={"/manga"} />
+        <AniMangaList api={searchManga} hrefLink={"/manga"} />
       </section>
     </>
   );

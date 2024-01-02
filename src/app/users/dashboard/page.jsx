@@ -7,10 +7,18 @@ const Page = async () => {
 
   return (
     <>
-      <div className="text-color-whity flex items-center my-8 justify-center bg-color-dark rounded-xl hover:scale-105 transition-all duration-500 hmin:max-w-sm mini:max-w-xs mx-auto shadow-xl shadow-color-dark border-4 border-color-whity">
-        <div className="items-center justify-center mx-auto">
-          <h5 className="text-2xl font-bold py-4 mx-auto text-center">Welcome, {user?.name}</h5>
-          <Image src={user?.image} alt="..." width={250} height={250} className="mx-auto hover:scale-105 transition-all duration-500 cursor-pointer" />
+      <div className="text-color-whity flex justify-center items-center bg-color-dark rounded-xl hover:scale-105 transition-all duration-500 hmin:max-w-sm mini:max-w-xs mx-auto shadow-xl shadow-color-dark border-4 border-color-whity my-4 py-4 flex-row flex-1 grow">
+        <div className="items-center justify-center mx-auto my-auto">
+          <h5 className="text-2xl font-bold py-4 mx-auto text-center">
+            Welcome, {user?.name}
+          </h5>
+          <Image
+            src={user?.image}
+            alt="..."
+            width={250}
+            height={250}
+            className="mx-auto hover:scale-105 transition-all duration-500 cursor-pointer"
+          />
           <div className="py-8 flex gap-4 flex-col">
             <Link
               href="/users/dashboard/profile"

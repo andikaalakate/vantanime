@@ -1,4 +1,4 @@
-import AnimeList from "@/components/AniMangaList";
+import AniMangaList from "@/components/AniMangaList";
 import Header from "@/components/AniMangaList/Header";
 import {
   getAnimeResponse,
@@ -24,11 +24,11 @@ const Page = async () => {
           linkTitle="Lihat Semua"
           linkHref="/anime/populer"
         />
-        <AnimeList api={topAnime} hrefLink={"/anime"} />
+        <AniMangaList api={topAnime} hrefLink={"/anime"} />
       </section>
       <section>
         <Header title="Rekomendasi Anime" />
-        <AnimeList api={recAnime} hrefLink={"/anime"} />
+        <AniMangaList api={recAnime} hrefLink={"/anime"} />
       </section>
       <section>
         <Header
@@ -36,11 +36,11 @@ const Page = async () => {
           linkTitle="Lihat Semua"
           linkHref="/manga/populer"
         />
-        <AnimeList api={topManga} hrefLink={"/manga"} />
+        <AniMangaList api={topManga} hrefLink={"/manga"} />
       </section>
       <section>
         <Header title="Rekomendasi Manga" />
-        <AnimeList api={recManga} hrefLink={"/manga"} />
+        <AniMangaList api={recManga} hrefLink={"/manga"} />
       </section>
     </>
   );
