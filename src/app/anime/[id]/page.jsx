@@ -12,7 +12,7 @@ import MetaData from "@/components/AniMangaList/MetaData";
 const Page = async ({ params: { id } }) => {
   const anime = await getAnimeResponse(`anime/${id}`);
   const user = await authUserSession();
-  const collection = await prisma.AnimeCollection.findFirst({
+  const collection = await prisma.animeCollection.findFirst({
     where: { user_email: user?.email, anime_id: id },
   });
   return (

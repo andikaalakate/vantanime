@@ -4,7 +4,7 @@ export async function POST(request) {
   const { anime_id, user_email, anime_img, anime_title } = await request.json();
   const data = { anime_id, user_email, anime_img, anime_title };
 
-  const createCollection = await prisma.AnimeCollection.create({ data });
+  const createCollection = await prisma.animeCollection.create({ data });
 
   if (!createCollection)
     return Response.json({ status: 500, isCreated: false });

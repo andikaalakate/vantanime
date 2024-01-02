@@ -11,7 +11,7 @@ import MetaData from "@/components/AniMangaList/MetaData";
 const Page = async ({ params: { id } }) => {
   const manga = await getMangaResponse(`manga/${id}`);
   const user = await authUserSession();
-  const collection = await prisma.MangaCollection.findFirst({
+  const collection = await prisma.mangaCollection.findFirst({
     where: { user_email: user?.email, manga_id: id },
   });
   //   console.log(manga)

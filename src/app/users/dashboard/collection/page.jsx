@@ -7,10 +7,10 @@ const { default: Link } = require("next/link");
 
 const Page = async () => {
   const user = await authUserSession();
-  const animeCollection = await prisma.AnimeCollection.findMany({
+  const animeCollection = await prisma.animeCollection.findMany({
     where: { user_email: user?.email },
   });
-  const mangaCollection = await prisma.MangaCollection.findMany({
+  const mangaCollection = await prisma.mangaCollection.findMany({
     where: { user_email: user?.email },
   });
   return (
