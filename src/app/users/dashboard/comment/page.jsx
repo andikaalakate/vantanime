@@ -15,7 +15,7 @@ const Page = async () => {
     <section className="mt-4 mb-2">
       <Header title="My Comment" />
       <section>
-        <div className="animate__animated animate__fadeIn animate__slower bg-color-primary mx-4 rounded-lg shadow-lg">
+        <div className="animate__animated animate__fadeIn animate__slower bg-gradient-to-br from-color-primary to-blue-500  mx-4 rounded-lg shadow-lg">
           <h3 className="text-2xl text-color-whity text-center font-bold p-4">
             AnimeList Comment
           </h3>
@@ -38,7 +38,7 @@ const Page = async () => {
         </div>
       </section>
       <section>
-        <div className="animate__animated animate__fadeIn animate__slower bg-color-primary mx-4 rounded-lg shadow-lg">
+        <div className="animate__animated animate__fadeIn animate__slower bg-gradient-to-br from-color-primary to-blue-500  mx-4 rounded-lg shadow-lg">
           <h3 className="text-2xl text-color-whity text-center font-bold p-4">
             MangaList Comment
           </h3>

@@ -9,7 +9,7 @@ const AniMangaList = ({ api, hrefLink }) => {
         return (
           <div
             key={AniManga.mal_id}
-            className="shadow-xl hover:scale-105 transition-all duration-500 shadow-color-dark bg-color-whity rounded-lg border-2 border-color-whity hover:bg-color-primary hover:border-color-primary group active:scale-150"
+            className="shadow-xl hover:scale-105 transition-all duration-500 shadow-color-dark rounded-lg border-2 border-color-whity bg-gradient-to-br from-color-whity to-white hover:from-color-primary hover:to-blue-500 hover:border-color-primary group active:scale-110"
           >
             <Link
               href={`${hrefLink}/${AniManga.mal_id}`}

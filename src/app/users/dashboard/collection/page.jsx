@@ -18,7 +18,7 @@ const Page = async () => {
       <section className="mt-4 px-4 w-full">
         <Header title="My Collection" />
         <section>
-          <div className="animate__animated animate__fadeIn animate__slower bg-color-primary mx-4 rounded-lg shadow-lg">
+          <div className="animate__animated animate__fadeIn animate__slower bg-gradient-to-br from-color-primary to-blue-500  mx-4 rounded-lg shadow-lg">
             <h3 className="text-2xl text-color-whity text-center font-bold p-4">
               AnimeList Collection
             </h3>
@@ -29,7 +29,7 @@ const Page = async () => {
                 <Link
                   key={index}
                   href={`/anime/${collect.anime_id}`}
-                  className="shadow-xl hover:scale-105 transition-all duration-500 shadow-color-dark bg-color-whity rounded-lg border-2 border-color-whity hover:bg-color-primary hover:border-color-primary group"
+                  className="shadow-xl hover:scale-105 transition-all duration-500 shadow-color-dark bg-color-whity rounded-lg border-2 border-color-whity bg-gradient-to-br hover:from-color-primary hover:to-blue-500 hover:border-color-primary group"
                 >
                   <Image
                     src={collect.anime_img}
@@ -47,7 +47,7 @@ const Page = async () => {
           </div>
         </section>
         <section>
-          <div className="animate__animated animate__fadeIn animate__slower bg-color-primary mx-4 rounded-lg shadow-lg">
+          <div className="animate__animated animate__fadeIn animate__slower bg-gradient-to-br from-color-primary to-blue-500  mx-4 rounded-lg shadow-lg">
             <h3 className="text-2xl text-color-whity text-center font-bold p-4">
               MangaList Collection
             </h3>
@@ -58,7 +58,7 @@ const Page = async () => {
                 <Link
                   key={index}
                   href={`/manga/${collect.manga_id}`}
-                  className="shadow-xl hover:scale-105 transition-all duration-500 shadow-color-dark bg-color-whity rounded-lg border-2 border-color-whity hover:bg-color-primary hover:border-color-primary group"
+                  className="shadow-xl hover:scale-105 transition-all duration-500 shadow-color-dark bg-color-whity rounded-lg border-2 border-color-whity bg-gradient-to-br hover:from-color-primary hover:to-blue-500 hover:border-color-primary group"
                 >
                   <Image
                     src={collect.manga_img}
