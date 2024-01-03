@@ -17,9 +17,10 @@ const Page = async ({ params: { id } }) => {
   });
   return (
     <>
-      <div className="pt-4 px-4 flex justify-between items-center gap-4">
+      <div className="p-2 mx-4 mt-4 flex justify-between items-center gap-4 animate__animated animate__fadeIn animate__slower bg-gradient-to-br from-color-primary to-blue-500 rounded-lg shadow-lg">
         <h3 className="text-color-whity text-xl">
-          {anime.data?.title} - {anime.data?.status}
+          <span className="title">{anime.data?.title}</span> -{" "}
+          {anime.data?.status}
         </h3>
         <ButtonBack />
       </div>
@@ -49,7 +50,6 @@ const Page = async ({ params: { id } }) => {
           alt={anime.data?.images.jpg.image_url}
           width={250}
           height={250}
-          layout="fixed"
           className="img-card mini:max-h-[28rem] minni:max-h-[34rem] hmin:max-h-[38rem] hp:max-h-[40rem] sm:max-h-[50rem] rounded-lg my-5 shadow-xl border-2 border-color-dark md:hover:scale-95 duration-500 transition-all delay-200 mx-auto"
         />
         <div className="text-justify text-xl my-4 bg-color-dark rounded-lg p-4">

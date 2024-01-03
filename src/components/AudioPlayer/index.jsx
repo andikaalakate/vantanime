@@ -2,7 +2,7 @@ const AudioPlayer = () => {
   return (
     <>
       <audio id="audio" autoPlay loop>
-        <source src="/music/bg.mp3" type="audio/mpeg" />
+        <source src="/music/bg.ogg" type="audio/mpeg" autoPlay loop />
       </audio>
     </>
   );

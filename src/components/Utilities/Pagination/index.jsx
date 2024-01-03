@@ -22,11 +22,11 @@ export const Pagination = ({ page, lastPage, setPage }) => {
   };
 
   return (
-    <div className="flex justify-center gap-4 text-color-whity items-center py-4 px-2 text-2xl">
+    <div className="flex justify-center gap-4 text-color-whity items-center py-4 px-2 text-2xl animate__animated animate__fadeIn animate__slower bg-gradient-to-br from-color-primary to-blue-500  shadow-lg">
       {page <= 1 ? null : (
         <button
           onClick={handlePrevPage}
-          className="transition-all hover:text-color-primary duration-500"
+          className="transition-all hover:text-white duration-500"
         >
           Prev
         </button>
@@ -35,7 +35,7 @@ export const Pagination = ({ page, lastPage, setPage }) => {
         {page} of
         <button
           onClick={handleLastPage}
-          className="pl-2 transition-all hover:text-color-primary duration-500"
+          className="pl-2 transition-all hover:text-white duration-500"
         >
           {lastPage}
         </button>
@@ -43,7 +43,7 @@ export const Pagination = ({ page, lastPage, setPage }) => {
       {page >= lastPage ? null : (
         <button
           onClick={handleNextPage}
-          className="transition-all hover:text-color-primary duration-500"
+          className="transition-all hover:text-white duration-500"
         >
           Next
         </button>

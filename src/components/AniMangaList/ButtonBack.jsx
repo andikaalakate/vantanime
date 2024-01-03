@@ -15,7 +15,7 @@ const ButtonBack = () => {
       <div className="flex justify-end items-center">
         <button
           onClick={handleBack}
-          className="text-color-whity hover:text-color-primary transition-all duration-500"
+          className="text-color-whity hover:text-color-white transition-all duration-500"
         >
           <ArrowSquareLeft size={35} />
         </button>

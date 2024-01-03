@@ -8,6 +8,13 @@
   @apply p-0 m-0 box-border;
 }
 
+body {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none; /* Standard syntax */
+}
+
 img {
   @apply transition-all ease-in-out;
 }
@@ -16,6 +23,12 @@ img {
   html {
     @apply scroll-smooth;
   }
+}
+
+.title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .img-card {

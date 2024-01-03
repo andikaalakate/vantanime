@@ -1,33 +1,34 @@
-"use client";
+"use client"
 
 import { useState } from "react";
 import YouTube from "react-youtube";
 
 const VideoPlayer = ({ youtubeId }) => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleVideoPlayer = () => {
     setIsOpen((prevState) => !prevState);
   };
 
   const option = {
-    width: "300",
+    width: "350",
     height: "200",
   };
 
   const Player = () => {
     return (
-      <div className="fixed bottom-2 right-2 rounded-lg">
+      <div className="fixed bottom-2 left-1/2 transform -translate-x-1/2 w-[23.7rem] justify-center rounded-lg bg-gray-900 text-white p-4 shadow-lg aspect-video">
         <button
           onClick={handleVideoPlayer}
-          className="text-color-whity rounded-lg float-right px-4 mb-1 bg-color-dark transition-all duration-500 ease-in-out shadow-lg"
+          className="absolute top-2 right-2 rounded-lg px-2 bg-gray-800"
         >
-          X
+          Close
         </button>
         <YouTube
           videoId={youtubeId}
           onReady={(event) => event.target.pauseVideo()}
-          opts={option} className="object-cover"
+          opts={option}
+          className="object-cover mx-auto"
         />
       </div>
     );
@@ -37,7 +38,7 @@ const VideoPlayer = ({ youtubeId }) => {
     return (
       <button
         onClick={handleVideoPlayer}
-        className="fixed bottom-2 shadow-lg transition-all duration-500 ease-in-out rounded-lg right-2 w-32 bg-color-whity text-color-dark"
+        className="fixed bottom-2 left-1/2 transform -translate-x-1/2 w-32 rounded-lg bg-white text-gray-900 shadow-lg"
       >
         Trailer
       </button>

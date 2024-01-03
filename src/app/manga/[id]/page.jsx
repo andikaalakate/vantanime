@@ -17,9 +17,10 @@ const Page = async ({ params: { id } }) => {
   //   console.log(manga)
   return (
     <>
-      <div className="pt-4 px-4 flex justify-between items-center gap-4">
+      <div className="p-2 mt-4 mx-4 flex justify-between items-center gap-4 animate__animated animate__fadeIn animate__slower bg-gradient-to-br from-color-primary to-blue-500 rounded-lg shadow-lg">
         <h3 className="text-color-whity text-xl">
-          {manga.data?.title} - {manga.data?.status}
+          <span className="title">{manga.data?.title}</span> -{" "}
+          {manga.data?.status}
         </h3>
         <ButtonBack />
       </div>
