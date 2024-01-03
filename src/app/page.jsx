@@ -13,7 +13,6 @@ const Page = async () => {
   const topAnime = await getAnimeResponse("top/anime", "limit=8");
   const topManga = await getMangaResponse("top/manga", "limit=8");
   const randAnime = await getAnimeResponse("random/anime");
-  console.log(randAnime)
   let recAnime = await getNestedAnimeResponse("recommendations/anime", "entry");
   let recManga = await getNestedMangaResponse("recommendations/manga", "entry");
   recAnime = reproduce(recAnime, 8);

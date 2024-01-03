@@ -1,6 +1,5 @@
-"use client"
+"use client";
 
-import YouTube from "react-youtube";
 import { useEffect, useState } from "react";
 
 const Trailer = ({ youtubeId }) => {
@@ -12,31 +11,25 @@ const Trailer = ({ youtubeId }) => {
     }
   }, [youtubeId]);
 
-  const option = {
-    width: "w-full",
-    height: "h-full",
-  };
-
   return (
     <div className="flex justify-center mx-auto rounded-lg py-2 aspect-video items-center px-4">
       {videoId && (
         <iframe
-          className="w-full h-full rounded-lg"
+          className="w-full h-full rounded-xl border-color-primary border-2 shadow-lg"
           src={`https://www.youtube.com/embed/${youtubeId}`}
           title="YouTube video player"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
+          allowFullScreen
         ></iframe>
       )}
       {!videoId && (
         <iframe
-          className="w-full h-full rounded-lg"
+          className="w-full h-full rounded-xl border-color-primary border-2 shadow-lg"
           src={`https://www.youtube.com/embed/aEOyEtArBI8`}
           title="YouTube video player"
-          frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
+          allowFullScreen
         ></iframe>
       )}
     </div>

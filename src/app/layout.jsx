@@ -6,6 +6,7 @@ import Favicon from '@/components/Utilities/Head/Favicon'
 import Footer from '@/components/Utilities/Footer'
 import 'animate.css'
 import ScrollToTop from '@/components/Utilities/ScrollToTop'
+import AudioPlayer from '@/components/AudioPlayer'
 const poppins = Poppins({ subsets: ['latin'], weight:'500' })
 
 export const metadata = {
@@ -30,6 +31,7 @@ export default function RootLayout({ children }) {
         {children}
         {/* <Footer /> */}
         <ScrollToTop />
+        <AudioPlayer />
       </body>
     </html>
   );
