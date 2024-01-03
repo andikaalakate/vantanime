@@ -1,5 +1,6 @@
 import AniMangaList from "@/components/AniMangaList";
 import Header from "@/components/AniMangaList/Header";
+import Trailer from "@/components/Utilities/VideoPlayer/Trailer";
 import {
   getAnimeResponse,
   getMangaResponse,
@@ -11,6 +12,8 @@ import {
 const Page = async () => {
   const topAnime = await getAnimeResponse("top/anime", "limit=8");
   const topManga = await getMangaResponse("top/manga", "limit=8");
+  const randAnime = await getAnimeResponse("random/anime");
+  console.log(randAnime)
   let recAnime = await getNestedAnimeResponse("recommendations/anime", "entry");
   let recManga = await getNestedMangaResponse("recommendations/manga", "entry");
   recAnime = reproduce(recAnime, 8);
@@ -18,6 +21,10 @@ const Page = async () => {
 
   return (
     <>
+      <section className="my-4">
+        <Header title="Trailer Anime" />
+        <Trailer youtubeId={randAnime.data?.trailer.youtube_id} />
+      </section>
       <section>
         <Header
           title="Anime Paling Populer"

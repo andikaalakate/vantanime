@@ -1,33 +1,46 @@
 "use client"
 
-import { useState } from "react";
-import YouTube from "react-youtube"
+import YouTube from "react-youtube";
+import { useEffect, useState } from "react";
 
-export const Trailer = ({youtubeId}) => {
-    const [randomAnimeId, setRandomAnimeId] = useState(null);
-    const [trailerYoutubeId, setTrailerYoutubeId] = useState(null);
+const Trailer = ({ youtubeId }) => {
+  const [videoId, setVideoId] = useState(null);
 
-    useEffect(() => {
-      const fetchData = async () => {
-        // Ambil ID acak dari data anime
-        const randomId = Math.floor(Math.random() * topAnime.data.length);
-        setRandomAnimeId(topAnime.data[randomId].id);
-      };
+  useEffect(() => {
+    if (youtubeId) {
+      setVideoId(youtubeId);
+    }
+  }, [youtubeId]);
 
-      fetchData();
-    }, []);
-    
-    useEffect(() => {
-      const fetchTrailerYoutubeId = async () => {
-        if (randomAnimeId) {
-          const anime = await getAnimeResponse(`anime/${randomAnimeId}`);
-          setTrailerYoutubeId(anime.data.trailer.youtube_id);
-        }
-      };
+  const option = {
+    width: "w-full",
+    height: "h-full",
+  };
 
-      fetchTrailerYoutubeId();
-    }, [randomAnimeId]);
   return (
-    <div>Trailer</div>
-  )
-}
+    <div className="flex justify-center mx-auto rounded-lg py-2 aspect-video items-center px-4">
+      {videoId && (
+        <iframe
+          className="w-full h-full rounded-lg"
+          src={`https://www.youtube.com/embed/${youtubeId}`}
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      )}
+      {!videoId && (
+        <iframe
+          className="w-full h-full rounded-lg"
+          src={`https://www.youtube.com/embed/aEOyEtArBI8`}
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      )}
+    </div>
+  );
+};
+
+export default Trailer;
