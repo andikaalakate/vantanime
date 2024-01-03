@@ -47,7 +47,7 @@ const Page = async () => {
           {mangaComments.map((comment) => {
             return (
               <Link
-                href={`/anime/${comment.manga_id}`}
+                href={`/manga/${comment.manga_id}`}
                 key={comment.id}
                 className="text-color-whity cursor-default bg-color-dark p-4 rounded-lg shadow-lg hover:scale-95 transition-all duration-500"
               >
