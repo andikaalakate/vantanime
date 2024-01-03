@@ -6,7 +6,7 @@ import Favicon from '@/components/Utilities/Head/Favicon'
 import Footer from '@/components/Utilities/Footer'
 import 'animate.css'
 import ScrollToTop from '@/components/Utilities/ScrollToTop'
-import AudioPlayer from '@/components/AudioPlayer'
+// import AudioPlayer from '@/components/AudioPlayer'
 import RightClick from '@/components/Utilities/RightClick'
 const poppins = Poppins({ subsets: ['latin'], weight:'500' })
 
@@ -28,7 +28,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${poppins.className} scrollbar-thin scrollbar-thumb-color-whity scrollbar-track-color-primary bg-color-secondary animate__animated animate__fadeIn animate__slow`}
       >
-        <AudioPlayer />
+        {/* <AudioPlayer /> */}
         <NavBar />
         {children}
         {/* <Footer /> */}

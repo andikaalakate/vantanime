@@ -22,6 +22,8 @@ module.exports = {
         },
       },
       screens: {
+        pc: "1920px",
+        laptop: "1366px",
         "tablet-l": "992px",
         hp: "576px",
         hmin: "425px",

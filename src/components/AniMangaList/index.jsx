@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const AniMangaList = ({ api, hrefLink }) => {
   return (
-    <div className="grid mini:grid-cols-1 hmin:grid-cols-2 mini:gap-6 sm:gap-4 md:grid-cols-4 lg:grid-cols-5 2xl:grid-cols-8 sm:grid-cols-3 p-4 animate__animated animate__fadeInUp animate__slow">
+    <div className="grid mini:grid-cols-2 hmin:grid-cols-2 mini:gap-6 sm:gap-4 md:grid-cols-4 lg:grid-cols-5 2xl:grid-cols-8 sm:grid-cols-3 p-4 animate__animated animate__fadeInUp animate__slow">
       {api.data?.map((AniManga) => {
         return (
           <div
