@@ -1,3 +1,4 @@
+import Header from "@/components/Dashboard/Header";
 import { authUserSession } from "@/libs/auth";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,8 +8,11 @@ const Page = async () => {
 
   return (
     <>
-      <div className="text-color-whity flex justify-center items-center bg-color-dark rounded-xl hover:scale-105 transition-all duration-500 hmin:max-w-sm mini:max-w-xs mx-auto shadow-xl shadow-color-dark border-4 border-color-whity my-4 py-4 flex-row flex-1 grow">
-        <div className="items-center justify-center mx-auto my-auto">
+    <section className="my-4">
+      <Header title="Dashboard" />
+    </section>
+      <div className="text-color-whity flex justify-center items-center bg-color-dark rounded-xl hover:scale-105 transition-all duration-500 hmin:max-w-sm mini:max-w-xs mx-auto shadow-xl shadow-color-dark border-4 border-color-whity my-8 py-4 flex-row flex-1 grow">
+        <div className="items-center justify-center mx-auto my-auto mini:px-4">
           <h5 className="text-2xl font-bold py-4 mx-auto text-center">
             Welcome, {user?.name}
           </h5>

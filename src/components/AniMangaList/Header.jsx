@@ -3,7 +3,7 @@ import 'animate.css'
 
 const Header = ({ title, linkHref, linkTitle }) => {
   return (
-    <div className="p-4 flex justify-between items-center animate__animated animate__fadeIn animate__slower bg-gradient-to-br from-color-primary to-blue-500 mx-4 rounded-lg shadow-lg my-2">
+    <div className="px-4 py-2 flex justify-between items-center animate__animated animate__fadeIn animate__slower bg-gradient-to-br from-color-primary to-blue-500 mx-4 rounded-lg shadow-lg my-2">
       <h1 className="text-2xl font-bold text-color-whity title mr-4" title={title}>{title}</h1>
       {linkHref && linkTitle ? (
         <Link

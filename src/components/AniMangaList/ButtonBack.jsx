@@ -5,9 +5,18 @@ import { useRouter } from "next/navigation";
 
 const ButtonBack = () => {
   const router = useRouter();
+
+  const scrollTop = () => {
+    scrollTo({
+      behavior: "smooth",
+      top: 0,
+    });
+  };
   const handleBack = (event) => {
     event.preventDefault();
+    scrollTop()
     router.back();
+    router.refresh()
   };
 
   return (
