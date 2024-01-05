@@ -22,7 +22,9 @@ const Page = () => {
   return (
     <>
       <HeaderMenu title={`Manga Terpopuler #${page}`} />
+      <div className="pb-16">
       <MangaList api={topAnime} hrefLink={"/manga"} />
+      </div>
       <Pagination
         page={page}
         lastPage={topAnime.pagination?.last_visible_page}

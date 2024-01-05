@@ -1,14 +1,20 @@
 import Link from "next/link";
-import 'animate.css'
+import "animate.css";
 
 const Header = ({ title, linkHref, linkTitle }) => {
   return (
-    <div className="px-4 py-2 flex justify-between items-center animate__animated animate__fadeIn animate__slower bg-gradient-to-br from-color-primary to-blue-500 mx-4 rounded-lg shadow-lg my-2">
-      <h1 className="text-2xl font-bold text-color-whity title mr-4" title={title}>{title}</h1>
+    <div className="animate__animated animate__fadeIn animate__slower mini:sticky lg:static mini:top-0 z-50 mx-4 my-2 flex items-center justify-between rounded-b-lg bg-gradient-to-br from-color-primary to-blue-500 px-4 py-2 shadow-lg">
+      <h1
+        className="title mr-4 text-2xl font-bold text-color-whity"
+        title={title}
+      >
+        {title}
+      </h1>
       {linkHref && linkTitle ? (
         <Link
           href={linkHref}
-          className="md:text-xl text-color-whity sm:text-sm underline hover:text-white transition-all title ml-4" title={linkTitle}
+          className="title ml-4 text-color-whity underline transition-all hover:text-white sm:text-sm md:text-xl"
+          title={linkTitle}
         >
           {linkTitle}
         </Link>

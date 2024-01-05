@@ -3,10 +3,10 @@
 import { useRouter } from "next/navigation";
 import { useRef, useState } from "react";
 
-const AnimeCommentInput = ({anime_id, user_email, username, anime_title}) => {
+const AnimeCommentInput = ({ anime_id, user_email, username, anime_title }) => {
   const [comment, setComment] = useState("");
 
-  const router = useRouter()
+  const router = useRouter();
   const commentRef = useRef();
 
   const [isCreated, setIsCreated] = useState(false);
@@ -27,22 +27,27 @@ const AnimeCommentInput = ({anime_id, user_email, username, anime_title}) => {
       method: "POST",
       body: JSON.stringify(data),
     });
-    
+
     const postComment = await response.json();
     if (postComment.status == 200) {
       setIsCreated(postComment.isCreated);
-      setComment("")
-      router.refresh()
+      setComment("");
+      router.refresh();
     }
     return;
   };
   return (
-    <div className="flex flex-col gap-2 m-4">
+    <div className="m-4 flex flex-col gap-2">
       {isCreated && <p className="text-color-whity">Komentar terkirim...</p>}
-      <textarea onChange={handleInput} className="h-32 w-full rounded-lg p-4 shadow-lg" value={comment} ref={commentRef} />
+      <textarea
+        onChange={handleInput}
+        className="h-32 w-full rounded-lg bg-color-whity p-4 text-color-dark shadow-lg"
+        value={comment}
+        ref={commentRef}
+      />
       <button
         onClick={handlePosting}
-        className="bg-color-primary text-base rounded-md shadow-lg py-2 px-4 font-bold text-color-whity hover:text-slate-200 hover:bg-[#0041C8] transition-all duration-500 self-start flex my-2"
+        className="my-2 flex self-start rounded-md bg-color-primary px-4 py-2 text-base font-bold text-color-whity shadow-lg transition-all duration-500 hover:bg-[#0041C8] hover:text-slate-200"
       >
         Posting Komentar
       </button>
