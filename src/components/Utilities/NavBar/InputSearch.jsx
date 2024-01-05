@@ -19,7 +19,7 @@ const InputSearch = () => {
   };
 
   return (
-    <div className="mini:sticky relative mini:top-0 mini:w-full md:w-1/2 md:px-24 mini:inset-0">
+    <div className="relative mini:top-0 mini:w-full md:w-1/2 md:px-24 mini:inset-0">
       <input
         type="text"
         placeholder="Cari Anime / Manga ..."
